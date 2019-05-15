@@ -1,0 +1,17 @@
+- name: klasos exec
+  hosts: klasos
+  connection: network_cli
+  vars:
+    ansible_password: klas
+    ansible_use_unsafe_shell: True
+    ansible_network_os: klasos
+    ansible_user: klas
+    ansible_ssh_pass: klas
+    ansible_ssh_common_args: '-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+  tasks:
+    - name: Getting KlasOS version
+      ios_command:
+        commands: show version
+      register: output
+    - debug:
+       msg: "{{(output.stdout_lines[0]|list).1}}"
