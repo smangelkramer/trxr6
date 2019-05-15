@@ -17,7 +17,7 @@
        msg: "{{(output.stdout_lines[0]|list).1}}"
     - name: Getting KlasOS clock
       ios_command:
-        commands: show clock
+        commands: show version
       register: output
     - debug:
        msg: "{{(output.stdout_lines[0]|list).1}}"
