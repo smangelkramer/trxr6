@@ -1,3 +1,5 @@
+"TEST"
+
 - name: klasos exec
   hosts: klasos
   connection: network_cli
