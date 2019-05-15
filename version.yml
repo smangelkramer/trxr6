@@ -11,7 +11,7 @@
   tasks:
     - name: Getting KlasOS version
       ios_command:
-        commands: show version
+        commands: show clock
       register: output
     - debug:
        msg: "{{(output.stdout_lines[0]|list).1}}"
